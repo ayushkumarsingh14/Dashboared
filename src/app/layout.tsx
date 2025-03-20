@@ -24,9 +24,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} flex items-start justify-center `}>
         <Sidebar/>
-        {children}
+        <main className="w-full h-full">
+          {children}
+        </main>
       </body>
     </html>
   );
