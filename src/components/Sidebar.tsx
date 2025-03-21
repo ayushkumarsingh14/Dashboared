@@ -1,5 +1,6 @@
 "use client";
 
+import { Inbox, UserRound, CreditCard, Bell, Settings, Lock, FileText } from "lucide-react";
 import { 
   Command, CommandEmpty, CommandGroup, 
   CommandInput, CommandItem, CommandList, CommandSeparator 
@@ -11,18 +12,18 @@ export default function Sidebar() {
     {
       group: "General",
       items: [
-        { link: "/", text: "Profile" },
-        { link: "/", text: "Inbox" },
-        { link: "/", text: "Billing" },
-        { link: "/", text: "Notifications" }
+        { link: "/", text: "Profile", icon: <UserRound /> },
+        { link: "/", text: "Inbox", icon: <Inbox /> },
+        { link: "/", text: "Billing", icon: <CreditCard /> },
+        { link: "/", text: "Notifications", icon: <Bell /> }
       ]
     },
     {
       group: "Settings",
       items: [
-        { link: "/", text: "General Settings" },
-        { link: "/", text: "Privacy" },
-        { link: "/", text: "Logs" }
+        { link: "/", text: "General Settings", icon: <Settings /> },
+        { link: "/", text: "Privacy", icon: <Lock /> },
+        { link: "/", text: "Logs", icon: <FileText /> }
       ]
     }
   ];
@@ -32,17 +33,19 @@ export default function Sidebar() {
       <UserItem />
 
       <div className="grow">
-        <Command>
+        <Command style={{overflow:'visible'}}>
           <CommandInput placeholder="Type a command or search..." />
-          <CommandList>
+          <CommandList style={{overflow:'visible'}}>
             {menuList.map((menu, key) => (
               <CommandGroup key={key} heading={menu.group}>
                 {menu.items.map((option, optionsKey) => (
-                  <CommandItem key={optionsKey}>{option.text}</CommandItem>
+                  <CommandItem key={optionsKey} className="flex gap-2">
+                    <span className="mr-2">{option.icon}</span>
+                    {option.text}
+                  </CommandItem>
                 ))}
               </CommandGroup>
             ))}
-
             <CommandSeparator />
           </CommandList>
         </Command>
