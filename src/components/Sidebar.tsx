@@ -34,7 +34,6 @@ export default function Sidebar() {
 
       <div className="grow">
         <Command style={{overflow:'visible'}}>
-          <CommandInput placeholder="Type a command or search..." />
           <CommandList style={{overflow:'visible'}}>
             {menuList.map((menu, key) => (
               <CommandGroup key={key} heading={menu.group}>
