@@ -25,14 +25,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} flex items-start justify-center `}>
-        <Sidebar/>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} flex items-start justify-center `}
+      >
+        <Sidebar />
         <main className="w-full h-full">
-          <Header/>
-          {children}
+          <Header />
+          <div className="p-8">
+            {children}
+          </div>
         </main>
       </body>
     </html>
   );
 }
- 
