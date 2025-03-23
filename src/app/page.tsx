@@ -1,21 +1,33 @@
 import { Button } from "@/components/ui/button";
-import "./globals.css"; 
+import "./globals.css";
 import General from "@/components/Cards/General";
-import { Card } from "@/components/ui/card";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import MyCalendar from "@/components/MyCalendar";
-
+import { DataTableDemo } from "@/components/Cards/DataTableDemo";
 
 export default function Home() {
-  console.log(Button)
+  console.log(Button);
   return (
-    <div className="grid gap-[32px]" >
+    <div className="grid gap-[32px]">
       <div className="grid gap-[32px]">
-        <General/>
-        
+        <General />
       </div>
-      <div className="grid grid-cols-2 gap-[32px]">
-        <MyCalendar/>
-        <Card className="h-[300px]"/>
+      <div className="grid grid-cols-2 gap-[32px] overflow-hidden ">
+        <MyCalendar />
+        <Card className="p-[32px] overflow-y-scroll">
+          <CardHeader>
+            <CardTitle>User</CardTitle>
+            <CardDescription>
+              These are the Users.
+            </CardDescription>
+          </CardHeader>
+          <DataTableDemo />
+        </Card>
       </div>
     </div>
   );
