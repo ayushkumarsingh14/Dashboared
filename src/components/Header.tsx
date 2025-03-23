@@ -33,9 +33,9 @@ export default function Header() {
       <div className="flex items-center justify-end">
         <DropdownMenu>
           <DropdownMenuTrigger>
-            <Button variant="outline" size="icon">
+            <div>
               <Bell />
-            </Button>
+            </div>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Notifications</DropdownMenuLabel>
