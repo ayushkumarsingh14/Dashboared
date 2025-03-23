@@ -14,17 +14,16 @@ export default function Home() {
   console.log(Button);
   return (
     <div className="grid gap-[32px]">
-      <div className="grid gap-[32px]">
-        <General />
-      </div>
-      <div className="grid grid-cols-2 gap-[32px] overflow-hidden ">
+      {/* General Component */}
+      <General />
+
+      {/* MyCalendar and Card Section */}
+      <div className="grid grid-cols-2 gap-[32px] overflow-hidden">
         <MyCalendar />
         <Card className="p-[32px] overflow-y-scroll">
           <CardHeader>
             <CardTitle>User</CardTitle>
-            <CardDescription>
-              These are the Users.
-            </CardDescription>
+            <CardDescription>These are the Users.</CardDescription>
           </CardHeader>
           <DataTableDemo />
         </Card>
